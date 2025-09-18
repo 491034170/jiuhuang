@@ -293,15 +293,19 @@
             <p>邮箱：<a href="mailto:491034170@qq.com" class="underline">491034170@qq.com</a></p>
           </div>
         </div>
-        <form class="card bg-neutral-50 p-6 border border-neutral-200" onsubmit="event.preventDefault(); alert('感谢提交，我们将尽快联系您。');">
+       <form action="https://formspree.io/f/mandggyv" method="POST" class="card bg-neutral-50 p-6 border border-neutral-200">
           <label class="block text-sm font-medium">称呼</label>
-          <input required class="mt-1 w-full rounded-xl border border-neutral-300 px-4 py-2" placeholder="例如：王先生"/>
+          <input name="name" required class="mt-1 w-full rounded-xl border border-neutral-300 px-4 py-2" placeholder="例如：王先生"/>
+
           <label class="block text-sm font-medium mt-4">Email</label>
-          <input type="email" required class="mt-1 w-full rounded-xl border border-neutral-300 px-4 py-2" placeholder="you@example.com"/>
+          <input type="email" name="email" required class="mt-1 w-full rounded-xl border border-neutral-300 px-4 py-2" placeholder="you@example.com"/>
+
           <label class="block text-sm font-medium mt-4">想聊什么</label>
-          <textarea required class="mt-1 w-full rounded-xl border border-neutral-300 px-4 py-2" rows="4" placeholder="投资/试点/采购/文旅联动…"></textarea>
-          <button class="mt-4 px-5 py-3 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700">提交</button>
-        </form>
+          <textarea name="message" required class="mt-1 w-full rounded-xl border border-neutral-300 px-4 py-2" rows="4" placeholder="投资/试点/采购/文旅联动…"></textarea>
+
+          <button type="submit" class="mt-4 px-5 py-3 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700">提交</button>
+</form>
+
       </div>
       <p class="mt-10 text-xs text-neutral-500">© 边疆涅槃 · 乡村振兴与数字农业示范 · 由 Cloudflare Pages 托管</p>
     </div>
