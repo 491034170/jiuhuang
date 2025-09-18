@@ -81,25 +81,28 @@
               <li>· 文旅打卡：种植地体验、采摘互动、农品市集</li>
               <li>· 绿色课堂：VR/AR 环保互动课程 + B 站传播</li>
             </ul>
-           <!-- 轮播图：本地 assets 图片轮播 -->
-<div class="mt-6 relative select-none">
-  <div id="carousel" class="overflow-hidden rounded-xl">
-    <div class="whitespace-nowrap transition-transform duration-700 ease-in-out" style="transform: translateX(0%)" data-index="0">
-      <img src="assets/illustration1.jpg" alt="illust 1" class="inline-block w-full align-top"/>
-      <img src="assets/illustration2.jpg" alt="illust 2" class="inline-block w-full align-top"/>
-      <img src="assets/illustration3.jpg" alt="illust 3" class="inline-block w-full align-top"/>
+           <!-- 轮播图：本地 assets 图片轮播（可访问性 + 懒加载） -->
+<div class="mt-6 relative select-none" id="carousel" role="region" aria-label="形象展示轮播">
+  <div class="overflow-hidden rounded-xl">
+    <div class="whitespace-nowrap transition-transform duration-700 ease-in-out" style="transform: translateX(0%)" id="carouselInner">
+      <img src="assets/illustration1.jpg" alt="展示图 1" class="inline-block w-full align-top" loading="eager" decoding="async"/>
+      <img src="assets/illustration2.jpg" alt="展示图 2" class="inline-block w-full align-top" loading="lazy" decoding="async"/>
+      <img src="assets/illustration3.jpg" alt="展示图 3" class="inline-block w-full align-top" loading="lazy" decoding="async"/>
     </div>
   </div>
-  <!-- 指示点 -->
+
+  <!-- 指示点（小圆点） -->
   <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
-    <button class="h-2.5 w-2.5 rounded-full bg-white/60 ring-1 ring-black/10 data-[active=true]:bg-white" data-dot="0" aria-label="图1"></button>
-    <button class="h-2.5 w-2.5 rounded-full bg-white/60 ring-1 ring-black/10 data-[active=true]:bg-white" data-dot="1" aria-label="图2"></button>
-    <button class="h-2.5 w-2.5 rounded-full bg-white/60 ring-1 ring-black/10 data-[active=true]:bg-white" data-dot="2" aria-label="图3"></button>
+    <button type="button" class="h-2.5 w-2.5 rounded-full bg-white/60 ring-1 ring-black/10 data-[active=true]:bg-white" data-dot="0" aria-label="切换到第 1 张" aria-current="true"></button>
+    <button type="button" class="h-2.5 w-2.5 rounded-full bg-white/60 ring-1 ring-black/10 data-[active=true]:bg-white" data-dot="1" aria-label="切换到第 2 张"></button>
+    <button type="button" class="h-2.5 w-2.5 rounded-full bg-white/60 ring-1 ring-black/10 data-[active=true]:bg-white" data-dot="2" aria-label="切换到第 3 张"></button>
   </div>
+
   <!-- 左右按钮（桌面端可见） -->
-  <button id="prevBtn" class="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 h-9 w-9 items-center justify-center rounded-full bg-white/80 shadow hover:bg-white" aria-label="上一张">‹</button>
-  <button id="nextBtn" class="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 h-9 w-9 items-center justify-center rounded-full bg-white/80 shadow hover:bg-white" aria-label="下一张">›</button>
+  <button type="button" id="prevBtn" class="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 h-9 w-9 items-center justify-center rounded-full bg-white/80 shadow hover:bg-white" aria-label="上一张">‹</button>
+  <button type="button" id="nextBtn" class="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 h-9 w-9 items-center justify-center rounded-full bg-white/80 shadow hover:bg-white" aria-label="下一张">›</button>
 </div>
+
 
           </div>
         </div>
